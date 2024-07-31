@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Job Board{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <nav>
+        <a href="/">Home</a>
+        <a href="{% url 'job_list' %}">Job List</a>
+        <a href="{% url 'login' %}">Login</a>
+        <a href="{% url 'job_seeker_register' %}">Job Seeker Login</a>
+        <a href="{% url 'employer_register' %}">Employer Login</a>
+    </nav>
+    <div class="container">
+        <main>
+            {% block content %}
+            <h2>Welcome to the Job Board</h2>
+            <p>Find your next opportunity or post a job to find the perfect candidate!</p>
+            <!-- Job listing or other content goes here -->
+            {% endblock %}
+        </main>
+        <footer>
+            <p>&copy; 2024 Job Board. All Rights Reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Use</a></p>
+        </footer>
+    </div>
+</body>
+</html>
